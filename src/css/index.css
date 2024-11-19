@@ -1,0 +1,37 @@
+* {
+  font-size: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  height: 100vh;
+  background-color: #eee;
+}
+
+.navbar-content {
+  background-color: #113977;
+}
+
+.text-user-navbar {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* SEARCH USERS */
+.section-card-container {
+  background-color: #fff;
+}
+
+/* UTILITIES */
+.form-input-container {
+  width: 258px;
+}
+
+.button-container {
+  background-color: #113977;
+  color: #fff;
+}
+
+.button-container:hover {
+  background-color: #113977;
+  opacity: 95%;
+}

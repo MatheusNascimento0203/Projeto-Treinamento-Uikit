@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/css/uikit.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>Usuários</title>
+  </head>
+  <body>
+    <main>
+      <nav class="navbar-container">
+        <div class="uk-text-center" uk-grid>
+          <div class="uk-width-expand@m">
+            <div
+              class="uk-card uk-card-default uk-card-body uk-flex uk-text-middle uk-flex-between navbar-content"
+            >
+              <img src="../assets/images/retangulo.svg" alt="Logo-Site" />
+              <div class="uk-flex uk-flex-middle">
+                <p class="uk-text-bold uk-text-default text-user-navbar">
+                  Olá, José Ribeiro
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="uk-flex uk-flex-center uk-margin-medium-top">
+        <div
+          class="uk-card uk-flex uk-flex-column section-card-container uk-width-3-5"
+        >
+          <div class="uk-card-header">
+            <h3 class="uk-card-title">Informações do Usuário</h3>
+            <hr />
+          </div>
+          <div class="uk-card-body">
+            <form class="uk-flex uk-flex-between uk-flex-column">
+              <div>
+                <input
+                  class="uk-input form-input-container"
+                  type="text"
+                  placeholder="Nome"
+                />
+                <input
+                  class="uk-input form-input-container"
+                  type="email"
+                  placeholder="Email"
+                />
+                <select class="uk-select form-input-container">
+                  <option>Grupo de Permissões</option>
+                  <option></option>
+                </select>
+                <select class="uk-select form-input-container">
+                  <option>Status</option>
+                  <option></option>
+                </select>
+              </div>
+              <div class="uk-flex uk-margin-medium-top uk-flex-right@l">
+                <button
+                  class="uk-button uk-button-default uk-margin-small-right"
+                >
+                  Cancelar
+                </button>
+                <button class="uk-button button-container">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- UIKIT SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
+    <script src="uikit/dist/js/uikit-icons.min.js"></script>
+  </body>
+</html>
