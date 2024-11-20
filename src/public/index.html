@@ -42,37 +42,117 @@
             <h3 class="uk-card-title">Informações do Usuário</h3>
             <hr />
           </div>
+          <!-- FORM SEARCH -->
           <div class="uk-card-body">
-            <form class="uk-flex uk-flex-between uk-flex-column">
+            <form
+              class="uk-flex uk-flex-between uk-flex-column form-search-content"
+            >
               <div>
                 <input
-                  class="uk-input form-input-container"
+                  class="uk-input form-input-container uk-border-rounded"
                   type="text"
                   placeholder="Nome"
                 />
                 <input
-                  class="uk-input form-input-container"
+                  class="uk-input form-input-container uk-border-rounded"
                   type="email"
                   placeholder="Email"
                 />
-                <select class="uk-select form-input-container">
+                <select
+                  class="uk-select form-input-container uk-border-rounded"
+                >
                   <option>Grupo de Permissões</option>
                   <option></option>
                 </select>
-                <select class="uk-select form-input-container">
+                <select
+                  class="uk-select form-input-container uk-border-rounded"
+                >
                   <option>Status</option>
                   <option></option>
                 </select>
               </div>
               <div class="uk-flex uk-margin-medium-top uk-flex-right@l">
                 <button
-                  class="uk-button uk-button-default uk-margin-small-right"
+                  class="uk-button uk-margin-small-right uk-border-rounded button-container"
+                  uk-toggle="target: #add-user-modal"
                 >
-                  Cancelar
+                  Adicionar Novo Usuário
                 </button>
-                <button class="uk-button button-container">Salvar</button>
+                <button class="uk-button button-container uk-border-rounded">
+                  Buscar
+                </button>
               </div>
             </form>
+          </div>
+          <!-- GRID TABLE RESULTS -->
+          <table class="uk-table uk-table-striped">
+            <thead class="uk-box-shadow-large thead-content">
+              <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Tipo de Usuário</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Matheus Sousa</td>
+                <td>matheufla.123@gmail.com</td>
+                <td>Ativo</td>
+                <td>Administrador</td>
+                <td>Editar</td>
+                <td>Excluir</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="add-user-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+              <p class="uk-modal-title">Informações do usuário</p>
+              <hr />
+              <form class="uk-flex uk-flex-column form-add-user-content">
+                <div class="uk-flex uk-margin-small-bottom">
+                  <input
+                    class="uk-input uk-border-rounded"
+                    type="text"
+                    placeholder="Nome"
+                    id="nome"
+                  />
+                </div>
+                <div class="uk-flex uk-flex-between">
+                  <input
+                    class="uk-input form-input-container uk-border-rounded"
+                    type="email"
+                    placeholder="Email"
+                    id="email"
+                  />
+                  <select
+                    class="uk-select form-input-container uk-border-rounded"
+                    id="grupo-permissao"
+                  >
+                    <option value="">Grupo de Permissões</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Cliente">Cliente</option>
+                    <option value="Suporte">Suporte</option>
+                    <option value="Gestor">Gestor</option>
+                  </select>
+                </div>
+                <p class="uk-text-right">
+                  <button
+                    class="uk-button uk-button-default uk-modal-close uk-border-rounded"
+                    type="button"
+                  >
+                    CANCELAR
+                  </button>
+                  <button
+                    class="uk-button button-container uk-border-rounded"
+                    type="submit"
+                  >
+                    CONFIRMAR
+                  </button>
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -82,5 +162,6 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
     <script src="uikit/dist/js/uikit-icons.min.js"></script>
+    <script src="../js/index.js"></script>
   </body>
 </html>

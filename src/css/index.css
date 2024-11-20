@@ -35,3 +35,9 @@ html {
   background-color: #113977;
   opacity: 95%;
 }
+
+.thead-content > tr {
+  color: #666666;
+  font-weight: 800;
+  border: 1px solid #000;
+}
