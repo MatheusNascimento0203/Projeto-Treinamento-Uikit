@@ -16,6 +16,15 @@ html {
   color: #fff;
 }
 
+.button-editar,
+.button-excluir {
+  background-color: transparent;
+  font-size: 0.875rem;
+  border: none;
+  opacity: 80%;
+  cursor: pointer;
+}
+
 /* SEARCH USERS */
 .section-card-container {
   background-color: #fff;

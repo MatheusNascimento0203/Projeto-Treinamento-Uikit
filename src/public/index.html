@@ -75,6 +75,7 @@
                 <button
                   class="uk-button uk-margin-small-right uk-border-rounded button-container"
                   uk-toggle="target: #add-user-modal"
+                  type="button"
                 >
                   Adicionar Novo Usuário
                 </button>
@@ -95,16 +96,7 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Matheus Sousa</td>
-                <td>matheufla.123@gmail.com</td>
-                <td>Ativo</td>
-                <td>Administrador</td>
-                <td>Editar</td>
-                <td>Excluir</td>
-              </tr>
-            </tbody>
+            <tbody class="tbody-content"></tbody>
           </table>
           <div id="add-user-modal" uk-modal>
             <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
@@ -137,6 +129,10 @@
                     <option value="Gestor">Gestor</option>
                   </select>
                 </div>
+                <label
+                  ><input class="uk-checkbox uk-border-rounded"" type="checkbox"
+                  id="check-block" /> Bloquear</label
+                >
                 <p class="uk-text-right">
                   <button
                     class="uk-button uk-button-default uk-modal-close uk-border-rounded"
@@ -162,6 +158,6 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
     <script src="uikit/dist/js/uikit-icons.min.js"></script>
-    <script src="../js/index.js"></script>
+    <script src="../js/index.js" type="module"></script>
   </body>
 </html>
