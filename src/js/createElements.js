@@ -16,4 +16,15 @@ function createButton(nameClasse, textButton) {
   return button;
 }
 
-export { createTr, createTd, createButton };
+function createP(nameClass, text) {
+  const p = document.createElement("p");
+  p.classList.add(nameClass);
+  p.innerHTML = text;
+  return p;
+}
+
+function createBr() {
+  return "<br>";
+}
+
+export { createTr, createTd, createButton, createP, createBr };

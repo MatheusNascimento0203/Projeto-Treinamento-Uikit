@@ -1,3 +1,4 @@
+import { createBr, createP } from "./createElements.js";
 import { refleshUsers } from "./refleshUsers.js";
 
 // PEGANDO OS DADOS DO LOCAL STORAGE
@@ -87,14 +88,23 @@ const addUserLocalStorage = (newUsers) => {
 };
 
 // DELETAR USUÁRIO
-const deleteUser = (id) => {
-  users = users.filter((user) => {
-    return user.id !== id;
-  });
+const deleteUser = (id, nome) => {
+  const modalBody = document.getElementById("text-modal-delete");
+  const br = createBr();
+  const p = createP(
+    "pText-modal-delete",
+    `Você irá excluir permanentemente o usuário: ${br}
+     ${nome} ${br}
+     \nDeseja continuar?`
+  );
+  modalBody.appendChild(p);
+  UIkit.modal(document.querySelector("#modal-sections")).show();
 
-  localStorage.setItem("user", JSON.stringify(users));
-
-  refleshUsers();
+  // users = users.filter((user) => {
+  //   return user.id !== id;
+  // });
+  // localStorage.setItem("user", JSON.stringify(users));
+  // refleshUsers();
 };
 
 const editUser = (id) => {

@@ -25,12 +25,13 @@ const handleTable = (dataUser) => {
   const botaoEditar = createButton("button-editar", "Editar");
   const botaoExcluir = createButton("button-excluir", "Excluir");
   botaoExcluir.setAttribute("data-id", dataUser.id);
+  botaoExcluir.setAttribute("id", "js-modal-confirm");
   botaoEditar.setAttribute("data-id", dataUser.id);
   botaoEditar.setAttribute("uk-toggle", "target: #add-user-modal");
 
   // PEGANDO O CLICK DO BOTÃO EXCLUIR
   botaoExcluir.addEventListener("click", () => {
-    deleteUser(dataUser.id);
+    deleteUser(dataUser.id, dataUser.nome);
   });
 
   // PEGANDO O CLICK DO BOTÃO EDITAR
