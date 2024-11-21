@@ -9,6 +9,14 @@ html {
 
 .navbar-content {
   background-color: #113977;
+  height: 88px;
+}
+
+.navbar-content > img {
+  margin-left: 18px;
+  margin-top: 14px;
+  width: 106px;
+  height: 60px;
 }
 
 .text-user-navbar {
@@ -32,7 +40,7 @@ html {
 
 /* UTILITIES */
 .form-input-container {
-  width: 258px;
+  width: 234px;
 }
 
 .button-container {
@@ -47,6 +55,9 @@ html {
 
 .thead-content > tr {
   color: #666666;
-  font-weight: 800;
-  border: 1px solid #000;
+  font-weight: bold;
+}
+.thead-content > tr > th {
+  font-size: 0.875rem;
+  font-weight: bold;
 }

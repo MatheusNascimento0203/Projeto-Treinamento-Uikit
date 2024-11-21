@@ -22,7 +22,7 @@
         <div class="uk-text-center" uk-grid>
           <div class="uk-width-expand@m">
             <div
-              class="uk-card uk-card-default uk-card-body uk-flex uk-text-middle uk-flex-between navbar-content"
+              class="uk-flex uk-text-middle uk-align-center uk-flex-between navbar-content"
             >
               <img src="../assets/images/retangulo.svg" alt="Logo-Site" />
               <div class="uk-flex uk-flex-middle">
@@ -52,23 +52,32 @@
                   class="uk-input form-input-container uk-border-rounded"
                   type="text"
                   placeholder="Nome"
+                  id="nome-search"
                 />
                 <input
                   class="uk-input form-input-container uk-border-rounded"
                   type="email"
                   placeholder="Email"
+                  id="email-search"
                 />
                 <select
                   class="uk-select form-input-container uk-border-rounded"
+                  id="grupo-permissao-search"
                 >
-                  <option>Grupo de Permissões</option>
-                  <option></option>
+                  <
+                  <option value="">Grupo de Permissões</option>
+                  <option value="Administrador">Administrador</option>
+                  <option value="Cliente">Cliente</option>
+                  <option value="Suporte">Suporte</option>
+                  <option value="Gestor">Gestor</option>
                 </select>
                 <select
                   class="uk-select form-input-container uk-border-rounded"
+                  id="status-usuario-search"
                 >
-                  <option>Status</option>
-                  <option></option>
+                  <option value="">Status</option>
+                  <option value="Ativo">Ativo</option>
+                  <option value="Bloqueado">Bloqueado</option>
                 </select>
               </div>
               <div class="uk-flex uk-margin-medium-top uk-flex-right@l">
@@ -76,28 +85,34 @@
                   class="uk-button uk-margin-small-right uk-border-rounded button-container"
                   uk-toggle="target: #add-user-modal"
                   type="button"
+                  id="button-add-user"
                 >
                   Adicionar Novo Usuário
                 </button>
-                <button class="uk-button button-container uk-border-rounded">
+                <button
+                  class="uk-button button-container uk-border-rounded"
+                  id="button-search"
+                >
                   Buscar
                 </button>
               </div>
             </form>
           </div>
           <!-- GRID TABLE RESULTS -->
-          <table class="uk-table uk-table-striped">
-            <thead class="uk-box-shadow-large thead-content">
-              <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Tipo de Usuário</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody class="tbody-content"></tbody>
-          </table>
+          <div class="uk-overflow-auto uk-height-medium" id="table-container">
+            <table class="uk-table uk-table-striped table-content">
+              <thead class="uk-box-shadow-large thead-content">
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Tipo de Usuário</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody class="tbody-content"></tbody>
+            </table>
+          </div>
           <div id="add-user-modal" uk-modal>
             <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
               <p class="uk-modal-title">Informações do usuário</p>

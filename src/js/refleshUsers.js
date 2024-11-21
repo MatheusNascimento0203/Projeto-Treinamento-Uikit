@@ -1,13 +1,15 @@
 import { createButton, createTd, createTr } from "./createElements.js";
 import { deleteUser, editUser } from "./index.js";
 const tbodyUserContent = document.querySelector(".tbody-content");
+const table = document.getElementById("table-container");
 
-const refleshUsers = () => {
+const refleshUsers = (users = null) => {
   // Limpa o conteúdo atual da tabela
   tbodyUserContent.innerHTML = "";
 
-  const users = JSON.parse(localStorage.getItem("user"));
-  users.forEach((user) => {
+  const usersShow = users || JSON.parse(localStorage.getItem("user") || "[]");
+
+  usersShow.forEach((user) => {
     handleTable(user);
   });
 };
