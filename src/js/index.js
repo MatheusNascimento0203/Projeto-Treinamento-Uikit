@@ -2,14 +2,14 @@ import { refleshUsers } from "./refleshUsers.js";
 
 const formSearch = document.querySelector(".form-search-content");
 const formAddUser = document.querySelector(".form-add-user-content");
-let id = 1;
+let isEditing = false;
 
 formSearch.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
 // FUNÇÃO PARA ADICIONAR USUÁRIO
-const addUser = () => {
+const upsertUser = () => {
   formAddUser.addEventListener("submit", (e) => {
     e.preventDefault();
     let nomeUser = document.getElementById("nome").value;
@@ -18,26 +18,47 @@ const addUser = () => {
     const checkboxStatus = document.getElementById("check-block");
     const statusUser = checkboxStatus.checked ? "Bloqueado" : "Ativo";
 
-    const dataUser = {
-      id: id,
-      nome: nomeUser,
-      email: emailUser,
-      grupoPermissao: selectGrupoPermissao,
-      status: statusUser,
-    };
-
+    // VALIDANDO INPUTS
     if (
       nomeUser.trim() === "" ||
       emailUser.trim() === "" ||
       selectGrupoPermissao.trim() === ""
     ) {
-      alert("Preencha todos os campos, por gentileza.");
-    } else {
+      return alert("Preencha todos os campos, por gentileza.");
+    }
+
+    if (!isEditing) {
+      const dataUser = {
+        id: id,
+        nome: nomeUser,
+        email: emailUser,
+        grupoPermissao: selectGrupoPermissao,
+        status: statusUser,
+      };
+
+      // ADICIONANDO USUÁRIO AO LOCAL STORAGE
       id++;
       addUserLocalStorage([dataUser]);
-      formAddUser.reset();
-      refleshUsers();
+      alert("Usuário adicionado com sucesso!");
+    } else {
+      // Modo de edição
+      users = users.map((user) =>
+        user.id === editUserId
+          ? {
+              ...user,
+              nome: nomeUser,
+              email: emailUser,
+              grupoPermissao: selectGrupoPermissao,
+              status: statusUser,
+            }
+          : user
+      );
+      alert("Usuário editado com sucesso!");
+      editUserId = null; // Reseta o estado para modo de adição
     }
+
+    formAddUser.reset();
+    refleshUsers();
   });
 };
 
@@ -62,12 +83,6 @@ const deleteUser = (id) => {
 };
 
 const editUser = (id) => {
-  let users = JSON.parse(localStorage.getItem("user")) || [];
-
-  const userToEdit = users.find((user) => {
-    return user.id === id;
-  });
-
   if (!userToEdit) {
     alert("Usuário não encontrado!");
     return;
@@ -119,7 +134,7 @@ const editUser = (id) => {
   formAddUser.addEventListener("submit", saveEditHandler);
 };
 
-addUser();
+upsertUser();
 refleshUsers();
 
 export { deleteUser, editUser };
